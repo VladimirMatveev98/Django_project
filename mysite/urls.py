@@ -18,16 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 from test_app.views import * #Все функции из файла views
 
-"""
-#OLD VERSION
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('test_app', index),
-    path('test_2', categories),
-]
-"""
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test_app/', include('test_app.urls')),
+    path('', include('test_app.urls')),
 ]
+
+#Обработчик для страницы 404:
+handler404 = pageNotFound

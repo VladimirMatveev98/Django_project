@@ -1,8 +1,11 @@
-from django.urls import path
+from django.urls import path, re_path
 from .views import *
 
 
 urlpatterns = [
-    path('', index), #http://127.0.0.1:8000/test_app/
-    path('content1/', categories), #http://127.0.0.1:8000/test_app/content1/
+    path('', index, name='home'), #http://127.0.0.1:8000/
+    path('content1/<int:someID>/', categories), #http://127.0.0.1:8000/content1/
+    re_path(r'^archive/(?P<year>[0-9]{4})/', archive)
+    #http://127.0.0.1:8000/archive/2020/
+
 ]
