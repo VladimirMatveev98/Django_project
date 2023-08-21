@@ -1,11 +1,6 @@
-<!<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>О сайте</title>
-</head>
+{% extends 'test_app/base.html' %}
 
-<body>
-  <h1>О сайте</h1>
-</body>
-</html>
+{% block content %}
+<h1>{{ title}}</h1>
+<p>Содержимое страницы "О САЙТЕ"
+{% endblock %}
