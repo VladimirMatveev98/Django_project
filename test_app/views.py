@@ -4,7 +4,12 @@ from django.http import HttpResponse, HttpResponseNotFound, Http404
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Страница первого тестового приложения")
+    #return HttpResponse("Страница первого тестового приложения")
+    return render(request, 'test_app/index.html')
+
+
+def about(request):
+    return render(request, 'test_app/about.html')
 
 
 def categories(request, someID):
